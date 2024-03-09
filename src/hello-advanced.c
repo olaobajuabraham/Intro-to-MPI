@@ -17,7 +17,7 @@ int main(int argc, char **argv)
     if (z==0) { 
         printf("Hello, I am %d of %d (hostname is %s)\n", id, p, name);  // payload
     } else {
-        printf("Hello, I am %d of %d (hostname UNKNOWN)\n", id, p);     // payload
+        printf("Hello, I am %d of %d (hostname UNKNOWN)\n", id, p);     // payload ????
     }
 
     MPI_Finalize(); // shutddwn VM.

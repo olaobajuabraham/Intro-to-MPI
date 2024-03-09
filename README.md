@@ -1,6 +1,10 @@
 # Intro-to-MPI
 message passing model is a type of parallel programming model. 
 
+### recommended resources 
+1. https://curc.readthedocs.io/en/latest/programming/MPI-C.html#setup-and-hello-world
+2. https://manual.cs50.io/
+
 To run any of the scripts in this project you need to have the MPI compiler installed.
 
 ```shell
@@ -8,7 +12,7 @@ sudo apt-get install mpich
 ```
 ### Functions under the MPI headers 
 Functions under the `<mpi.h>` include:
-1. MPI_Init(&argc, &argv) - Creates a Virtual Machine.
+1. MPI_Init(&argc, &argv) - Startsup a Virtual Machine.
 2. MPI_Comm_size(MPI_COMM_WORLD, &p) - Gets the Virtual Machine Size 
 3. MPI_Comm_rank(MPI_COMM_WORLD, &id) - Gets the Process Id / rank in Virtual Machine
 4. MPI_Finalize() - Shutsdown Virtual Machine.
