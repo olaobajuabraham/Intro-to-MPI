@@ -23,7 +23,8 @@ To build `src/hello-simple.c` and run it. you can change the number of processes
 mpicc -Wall -O -o bin/hello-simple src/hello-simple.c && mpirun -np 4 bin/hello-simple 
 ```
  
-To build `src/hello-advanced.c` and run it. you can change the number of processes by change the number 4 in the command.
+To build `src/hello-advanced.c` and run it use the command below. 
+you can change the number of processes by changing the number 4 in the command.
 `NOTE: The paylaod has been change in this implementation.`
 ```shell
 mpicc -Wall -O -o bin/hello-advanced src/hello-advanced.c && mpirun -np 4 bin/hello-advanced 
@@ -31,6 +32,6 @@ mpicc -Wall -O -o bin/hello-advanced src/hello-advanced.c && mpirun -np 4 bin/he
 You can also specify a machinefile to run the logic of the get the new paylaod.
 ```shell
 mpirun -machinefile resources/mpi04 -np 4 bin/hello-advanced
-``
+```
 
 
