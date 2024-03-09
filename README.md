@@ -34,4 +34,58 @@ You can also specify a machinefile to run the logic of the get the new paylaod.
 mpirun -machinefile resources/mpi04 -np 4 bin/hello-advanced
 ```
 
+MPI organises processors into groups called connectors.
+MPI_COMM_WORLD is the top level communicator consisting of all processors allocated by `mpirun -np` 
+
+### Basic POINT to POINT Communication in MPI
+MPI offers two basic point to point communication functions: 
+1. MPI_Send(message, count, datatype, dest, tag, comm)
+2. MPI_Recv(message, count, datatype, source, tag, comm, status)
+
+Many parallel programs can be written using just the basic
+MPI_Send and MPI_Recv and the other functions we used in hello-simple and hello-advanced programs.
+
+### Send and Recieve [Detailed]
+pass `MPI_ANY_SOURCE` to `MPI_Recv` if the source is irrelevant.
+pass `MPI_ANY_TAG` to `MPI_Recv` if the tag is also irrelevant. 
+
+
+### MPI DATETYPES
+MPI_CHAR : char
+MPI_DOUBLE : double
+MPI_FLOAT : float
+MPI_INT : int
+MPI_LONG : long
+MPI_LONG_DOUBLE : long double
+MPI_UNSIGNED_CHAR : unsigned char
+MPI_UNSIGNED_INT : unsigned int - ?????
+MPI_UNSIGNED_LONG : unsigned long
+MPI_UNSIGNED_SHORT : unsigned short
+
+### Example programs
+The Number guessing Game is a 2 player game with two actors: thinker and guesser
+1. Thinker - thinks of a number between 1 and 100
+2. Guesser - guesses the number the thinker has chosen.
+3. Thinker - replies whether the guess is low,high or correct.
+4. idf not correct, the guesser trys again and so on.
+
+### Task 1
+Implement this program as an MPI Program running on two processors
+Thinker is on processor 0
+    1. Recieves Integer guesses.
+    2. Sends replies as characters h, l or c.
+Guesser is on processor 1
+    1. Sends integer guesses
+    2. Recieves characters.
+
+NOTE: This is a distributed, non-parallel program, because the game is turn-based and thus inherently sequential.
+
+
+
+
+
+
+
+
+
 
