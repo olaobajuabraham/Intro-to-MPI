@@ -14,8 +14,10 @@ sudo apt-get install mpich
 Functions under the `<mpi.h>` include:
 1. MPI_Init(&argc, &argv) - Startsup a Virtual Machine.
 2. MPI_Comm_size(MPI_COMM_WORLD, &p) - Gets the Virtual Machine Size 
-3. MPI_Comm_rank(MPI_COMM_WORLD, &id) - Gets the Process Id / rank in Virtual Machine
-4. MPI_Finalize() - Shutsdown Virtual Machine.
+3. MPI_Comm_rank(MPI_COMM_WORLD, &id) - Gets the Process Id / rank in Virtual Machine.
+4. MPI_Get_processor_name(MPI_COMM_WORLD, &namelen) - get the name of the processor.
+5. MPI_Comm_split() - split the MPI_COMM_WORLD communicator into sub-communicators.
+5. MPI_Finalize() - Shutsdown Virtual Machine.
 
 ## Guides.
 To build `src/hello-simple.c` and run it. you can change the number of processes by change the number 4 in the command.
@@ -41,6 +43,8 @@ MPI_COMM_WORLD is the top level communicator consisting of all processors alloca
 MPI offers two basic point to point communication functions: 
 1. MPI_Send(message, count, datatype, dest, tag, comm)
 2. MPI_Recv(message, count, datatype, source, tag, comm, status)
+3. MPI_Ssend(message, count, datatype, dest, tag, comm)
+4. MPI_Bsend(message, count, datatype, dest, tag, comm)
 
 Many parallel programs can be written using just the basic
 MPI_Send and MPI_Recv and the other functions we used in hello-simple and hello-advanced programs.
